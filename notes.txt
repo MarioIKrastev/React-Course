@@ -1,0 +1,87 @@
+------------------------------------------------------------Import / Export ------------------------------------------------------------
+
+-=-=-=-=-=-=-=-=-=-=-
+
+default export => => =>
+
+example = 
+
+const person = {
+    name:'Max
+}
+export default person
+
+*if it's default, files can be imported with different names*
+import person from './person.js'
+import prsn from './person.js'
+
+
+
+named export => => =>
+
+example = 
+
+export const clean = ()=>{...}
+export const baseData = 10
+
+*if it's named export, each file need to be imported throug his own name 
+import {baseData} from './utility.js'
+import {clean} from './utility.js'
+OR
+import {baseData, clean} from './utility.js'
+OR
+import {clean as Clean} form './utility.js'
+OR
+import * as bundle from './utility.js'   <---- takes all functions from the utility file example bundle.clean ; bundle.baseData ; bundle.'function'
+
+
+------------------------------------------------------------ Classes, Properties and Methods  ------------------------------------------------------------
+
+
+ES6
+
+class Human {
+    constructor(){
+        this.gender = 'male
+    }
+    printGender(){
+        console.log(this.gender)
+    }
+}
+
+class Person extends Human {
+constructor(){
+    super();
+    this.name = 'Harry'
+}
+    printName(){
+        console.log(this.name)
+    }
+}
+
+const person = new Person();
+person.printName();
+person.printGender();
+
+Modern ES6 
+
+class Human {
+
+    gender = 'male';
+
+    printGender = () =>{
+        console.log(this.gender)
+    }
+}
+class Person extends Human {
+
+    name = 'Harry';
+
+    prontName = ()=>{
+        console.log(this.name)
+    }
+}
+
+const person = new Person();
+person.printName();
+person.printGender();
