@@ -85,3 +85,8 @@ class Person extends Human {
 const person = new Person();
 person.printName();
 person.printGender();
+
+
+
+!! The components in React are just JS functions
+
