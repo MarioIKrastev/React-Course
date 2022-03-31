@@ -1,4 +1,8 @@
+
 import React, { useRef, useState } from "react";
+
+import { useState } from "react";
+
 
 import Card from "../UI/Card";
 import Button from "../UI/Button ";
@@ -7,15 +11,13 @@ import ErrorModel from "../UI/ErrorModel";
 import styles from "./AddUser.module.css";
 
 const AddUser = (props) => {
+
   const nameInputRef = useRef();
   const ageInputRef = useRef();
 
-  const [userName, setUserName] = useState("");
-  const [age, setAge] = useState("");
-  const [error, setError] = useState();
-
   const addUserHandler = (event) => {
     event.preventDefault();
+
 
     const enteredName = nameInputRef.current.value;
     const enteredAge = ageInputRef.current.value;
@@ -27,7 +29,9 @@ const AddUser = (props) => {
       });
       return;
     }
+
     if (Number(enteredAge) < 12) {
+
       setError({
         title: "Invalid age",
         message: "Enter a valid age",
@@ -35,6 +39,7 @@ const AddUser = (props) => {
       return;
     }
     props.onAddUser(enteredName, enteredAge);
+
     setUserName("");
     setAge("");
   };
@@ -81,6 +86,9 @@ const AddUser = (props) => {
         </form>
       </Card>
     </React.Fragment>
+          <Button type="submit">Add User</Button>
+        </form>
+      </Card>
   );
 };
 

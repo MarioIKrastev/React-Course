@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReactDom from "react-dom";
 
@@ -42,6 +43,7 @@ const ErrorModel = (props) => {
         document.getElementById("overlay-root")
       )}
     </React.Fragment>
+
   );
 };
 
